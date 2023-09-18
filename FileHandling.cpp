@@ -6,7 +6,11 @@ int main()
 {
     char s[30];
     ofstream of("result.txt");
-    of<<"Welcome to C++ Programming";
+    // Manual Input
+    string userInput;
+    cout << "Enter whatever you want to write: " << endl;
+    getline(cin, userInput);
+    of << userInput;
     of.close();
 
     cout << "Data Saved to File" << endl;
