@@ -22,3 +22,6 @@ int main()
 
     return 0;
 }
+
+
+// Can also be done by using cin instead of getline by passing char in cin
