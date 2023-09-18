@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    ifstream of("result.txt");
+    ifstream rf("result.txt");
     string line;
     // Without Loop
-    getline(of, line);
+    getline(rf, line);
     cout << line << endl;
-    
+
     // With Loop
     // while (getline(of, line))
     // {
