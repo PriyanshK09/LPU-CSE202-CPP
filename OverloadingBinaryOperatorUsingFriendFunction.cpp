@@ -1,3 +1,16 @@
+// Declaration :
+// Friend complex operator+(complex, complex);
+
+// Definition :
+// Complex operator+(complex c1, complex c2)
+// {complex temp;
+// temp.x=c1.x+c2.x;
+// temp.y=c1.y+c2.y;
+// return(temp);
+
+// Calling :
+// E3= operator+(c1,c2);
+
 #include <iostream>
 
 using namespace std;
