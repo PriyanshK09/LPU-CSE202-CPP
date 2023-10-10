@@ -56,3 +56,22 @@ class result:public test, public sports
         void display(void);
 };
 
+void result::display(void)
+{
+    total = part1 + part2 + score;
+    put_number();
+    put_marks();
+    put_score();
+    cout << "Total score: " << total << endl;
+}
+
+int main()
+{
+    result student1;
+    student1.get_number(1234);
+    student1.get_marks(27.5, 33.2);
+    student1.get_score(6.6);
+    student1.display();
+    return 0;
+}
+
