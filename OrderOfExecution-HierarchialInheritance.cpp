@@ -37,7 +37,7 @@ int main()
     {
         company c1(e1);
     }
-    // delete emp
+    delete e1;
 }
 
 // Explanation : 
