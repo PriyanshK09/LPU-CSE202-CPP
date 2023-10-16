@@ -9,11 +9,11 @@ class A
     {
         x = i;
         y = j;
-        cout << "Constructor A" << endl;
+        cout << "Constructor A" << x << endl;
     }
     ~A()
     {
-        cout << "Calling Destructor A" << endl;
+        cout << "Calling Destructor A" << x << endl;
     }
 };
 
@@ -25,11 +25,11 @@ class B : public A
     {
         l = c;
         m = d;
-        cout << "Constructor B" << endl;
+        cout << "Constructor B" << l << endl;
     }
     ~B()
     {
-        cout<<"Calling Distructor B" << endl;
+        cout<<"Calling Distructor B" << l << endl;
     }
 };
 
@@ -41,11 +41,11 @@ class C : public B
     {
         n = u;
         m = v;
-        cout << "Constructor C" << endl;
+        cout << "Constructor C" << n << endl;
     }
     ~C()
     {
-        cout<<"Calling Distructor C" << endl;
+        cout<<"Calling Distructor C" << n << endl;
     }
 };
 
