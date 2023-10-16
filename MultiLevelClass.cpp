@@ -49,3 +49,11 @@ int main()
     obj.display();
     return 0;
 }
+
+// Explanation :
+// The code above is a simple example of multi-level inheritance. Here, class P is derived from class M and class N.
+// And class M and class N are derived from class P. So, the class P is the base class for class M and class N.
+// And class M and class N are the base classes for class P. The constructor of the base class is called first and then the constructor of the derived class is called.
+// The constructor of the base class is called in the order in which they are inherited. And the destructor is called in the reverse order of the constructor.
+// So, the constructor of class M is called first, then the constructor of class N is called and then the constructor of class P is called.
+// And the destructor of class P is called first, then the destructor of class N is called and then the destructor of class M is called.
