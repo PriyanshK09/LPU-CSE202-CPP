@@ -1,47 +1,25 @@
 #include <iostream>
-#include <stdlib.h>
 using namespace std;
 
-int main()
-{
-    double *arr, *sum, *avg;
-    int size;
-    sum = new double;
-    avg = new double;
-    cout << "Enter the size of the array: " << endl;
-    cin >> size;
-    cout << "Creating an array of size " << size << "..." << endl;
-    arr = new double[size];
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
 
-    if(arr==NULL||sum==NULL||avg==NULL)
-    {
-        cout << "Memory allocation failed!" << endl;
-        exit(1);
-    }
-    else
-    {
-        cout << "Memory allocation successful!" << endl;
+    int *arr = new int[n]; // allocating memory using DMA
 
-        cout << "Enter the elements of the array: " << endl;
-        for(int i=0; i<size; i++)
-        {
-            cin >> arr[i];
-        }
-
-        for(int i=0; i<size; i++)
-        {
-            *sum += arr[i];
-        }
-
-        *avg = *sum/size;
-
-        cout << "Sum of the elements of the array: " << *sum << endl;
-        cout << "Average of the elements of the array: " << *avg << endl;
-
-        delete [] arr;
-        delete sum;
-        delete avg;
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    cout << "The sum of array elements is: " << sum << endl;
+
+    delete[] arr; // deallocating memory
     return 0;
 }
