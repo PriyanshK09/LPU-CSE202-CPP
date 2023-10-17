@@ -8,6 +8,13 @@ int main() {
 
     int *arr = new int[n]; // allocating memory using DMA
 
+    if (arr == NULL)
+    {
+        cout << "Memory not allocated." << endl;
+        exit(0);
+    }
+    
+
     cout << "Enter the elements of the array: ";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
