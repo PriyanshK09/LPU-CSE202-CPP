@@ -1,66 +1,50 @@
-// Write a program that takes the obtained marks as input and calculates percentage based on the given marks and a total mark value. Using the percentage determine the grade according to the following criteria :
-// Percentage >= 90 = A+
-// Percentage >= 80 = A
-// Percentage >= 70 = B
-// Percentage >= 60 = C
-// Percentage >= 50 = D
-// Percentage < 50 = F
-// The program should create a Grade object with the obtained marks and the determined grade. It should then convert the Grade Object to two basic types : an int for the marks and a string for the grade: int marks = StudentGrade;. Finally the program should display the Marks and Grades
-
 #include <iostream>
-#include <string>
+#include <climits>
 
 using namespace std;
 
-class Grade {
-private:
-    int marks;
-    string grade;
-public:
-    Grade(int m) {
-        marks = m;
-        if (marks >= 90) {
-            grade = "A+";
-        }
-        else if (marks >= 80) {
-            grade = "A";
-        }
-        else if (marks >= 70) {
-            grade = "B";
-        }
-        else if (marks >= 60) {
-            grade = "C";
-        }
-        else if (marks >= 50) {
-            grade = "D";
-        }
-        else {
-            grade = "F";
-        }
-    }
-    operator int() const {
-        return marks;
-    }
-    operator string() const {
-        return grade;
-    }
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+// Function to check if a binary tree is a binary search tree
+bool isBST(TreeNode* root, int minVal = INT_MIN, int maxVal = INT_MAX) {
+    if (root == NULL) {
+        return true;
+    }
+    if (root->val < minVal || root->val > maxVal) {
+        return false;
+    }
+    return isBST(root->left, minVal, root->val - 1) && isBST(root->right, root->val + 1, maxVal);
+}
+
+// Function to create a binary tree from an array
+TreeNode* createTree(int arr[], int n, int i = 0) {
+    TreeNode* root = NULL;
+    if (i < n && arr[i] != -1) {
+        root = new TreeNode(arr[i]);
+        root->left = createTree(arr, n, 2 * i + 1);
+        root->right = createTree(arr, n, 2 * i + 2);
+    }
+    return root;
+}
+
 int main() {
-    int obtainedMarks, totalMarks;
-    cout << "Enter Obtained Marks: ";
-    cin >> obtainedMarks;
-    cout << "Enter Total Marks: ";
-    cin >> totalMarks;
-
-    double percentage = (double)obtainedMarks / totalMarks * 100;
-    Grade studentGrade(percentage);
-
-    int marks = studentGrade;
-    string grade = studentGrade;
-
-    cout << "Marks: " << marks << endl;
-    cout << "Grade: " << grade << endl;
-
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    TreeNode* root = createTree(arr, n);
+    if (isBST(root)) {
+        cout << "The given binary tree is a BST" << endl;
+    } else {
+        cout << "The given binary tree is not a BST" << endl;
+    }
     return 0;
 }
