@@ -40,3 +40,9 @@ int main()
     }
     return 0;
 }
+
+// Explanation: In the above program, we have created an array of objects dynamically.
+// The size of the array is taken from the user and the constructor is called for each object.
+// The constructor allocates memory for the array and the destructor frees the memory allocated to the array.
+// The destructor is called when the pointer is incremented to point to the next object.
+// The destructor is called for each object in the array.
