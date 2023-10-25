@@ -7,11 +7,11 @@ private:
     int *arr;
     int n;
 public:
-    Array();
+    Array(); // constructor is declared
     void show_data();
 };
 
-Array::Array()
+Array::Array() // constructor is defined
 {
     cout << "\nEnter size: ";
     cin >> n;
