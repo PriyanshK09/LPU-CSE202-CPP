@@ -48,5 +48,16 @@ int main() {
     color->paint();
 
     delete color;
+
+    // Explanation :-
+    // Color *color; || Pointer to the base class
+    // color = new RedPaint(); || Pointer to the derived class
+    // new is used to allocate memory for the derived class
+    // color->paint(); || Calls the paint() function of the derived class
+    // delete color; || Deletes the memory allocated for the derived class
+    // color = new BluePaint(); || Pointer to the derived class
+    // color->paint(); || Calls the paint() function of the derived class
+    // delete color; || Deletes the memory allocated for the derived class
+
     return 0;
 }
