@@ -16,10 +16,10 @@ int main()
         }
         else
         {
-            throw(x);
+            throw(x); // Throwing the exception
         }
     }
-    catch(int i)
+    catch(int i) // Catching the exception
     {
         cout<<"Exception Caught: Divide by zero"<<endl;
     }
