@@ -22,5 +22,6 @@ int main()
     catch(int i) // Catching the exception
     {
         cout<<"Exception Caught: Divide by zero"<<endl;
+        cout << "Error Code: " << i << "\n";
     }
 }
